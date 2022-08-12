@@ -37,6 +37,7 @@ jobs:
           reg query 'HKLM\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall' //s >&2
           # Convert ProgramFiles(x86) environment variable to Unix conventions
           cmd="$PROGRAMFILES (x86)\Git Credential Manager\git-credential-manager-core.exe"
+          "$cmd" --version | sed 's/+.*//' >actual
           "$cmd" --version
           ls -la "$cmd"
           ls -la "$(cygpath -au "$cmd")"
