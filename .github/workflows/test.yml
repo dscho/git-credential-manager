@@ -25,6 +25,9 @@ jobs:
       shell: bash
       run: |
         set -x
+        set +e
+        uname -a
+        cygpath -aw /
         # Even when a standalone GCM version is installed and added to the PATH,
         # GitHub actions runners still only recognize the version bundled with
         # Git for Windows. For this reason, we use the full path to our
