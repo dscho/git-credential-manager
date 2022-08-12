@@ -34,7 +34,7 @@ jobs:
         # installation to validate the version.
         if [[ windows-latest == windows* ]]; then
           ls -l /c/Program*/*redential*
-          reg query 'HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall' //s
+          reg query 'HKLM\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall' //s >&2
           # Convert ProgramFiles(x86) environment variable to Unix conventions
           cmd="$PROGRAMFILES (x86)\Git Credential Manager\git-credential-manager-core.exe"
           ls -la "$cmd"
